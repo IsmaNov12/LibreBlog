@@ -8,7 +8,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const post = await prisma.post.findUnique({ where: { slug } })
     if (!post) return res.status(404).json({ message: 'Post not found' })
-    return res.status(200).json(post)
+
+    // Convertimos createdAt a string ISO para evitar problemas en el frontend
+    return res.status(200).json({
+      ...post,
+      createdAt: post.createdat.toISOString(),
+    })
   } catch (error) {
     console.error('Error fetching post:', error)
     return res.status(500).json({ message: 'Internal server error' })
