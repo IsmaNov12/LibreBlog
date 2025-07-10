@@ -5,7 +5,7 @@ interface Post {
   id: number
   title: string
   slug: string
-  createdAt: string
+  createdat: string
 }
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
               <h2 className="text-xl font-semibold">{post.title}</h2>
             </Link>
             <p className="text-gray-500 text-sm">
-              Publicado el {new Date(post.createdAt).toLocaleDateString()}
+              Publicado el {new Date(post.createdat).toLocaleDateString()}
             </p>
           </li>
         ))}

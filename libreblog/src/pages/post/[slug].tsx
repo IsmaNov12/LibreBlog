@@ -5,7 +5,7 @@ interface Post {
   id: number
   title: string
   content: string
-  createdAt: string
+  createdat: string
 }
 
 export default function PostPage() {
@@ -41,8 +41,8 @@ export default function PostPage() {
       <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
     <p className="text-gray-600 text-sm mb-4">
      Publicado el{' '}
-    {post.createdAt
-     ? new Date(post.createdAt).toLocaleDateString('es-ES', {
+    {post.createdat
+     ? new Date(post.createdat).toLocaleDateString('es-ES', {
             year: 'numeric',
             month: 'long',
             day: 'numeric',
